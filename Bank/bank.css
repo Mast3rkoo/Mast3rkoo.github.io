@@ -1,0 +1,363 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  margin: 20px;
+  padding: 20px;
+  background-image: url('../Bank/backgroundPictures/Blue_man_background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.bank-name {
+  text-align: center;
+}
+
+.bank-name h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.logout i {
+  font-size: 24px;
+  color: var(--ultra-violet);
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.left-divs,
+.middle-div,
+.right-divs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
+}
+
+.middle-div {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.right-divs {
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+  flex: 0;
+}
+
+.right-divs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right-divs .box {
+  flex: 1;
+  margin: 5%;
+}
+
+.box {
+  height: auto;
+  width: 100%;
+}
+
+#credit-card-list {
+  list-style-type: none;
+}
+
+#credit-card-container {
+  background-color: #87dfff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vh;
+  text-align: center;
+}
+
+#credit-card-container img {
+  width: 70%;
+  height: auto;
+  border-radius: 2vh;
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+  max-height: 100%; /* Ensure the image doesn't exceed its container height */
+}
+
+#credit-card-container h2 {
+  text-align: center;
+  font-size: x-large;
+  margin: 5% 0 0 5%;
+}
+
+.accountBalance {
+  display: inline-block;
+  width: 100%;
+  height: 80%;
+  padding: 1% 5% 10% 4%;
+  margin: 5% 0 0 0;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  background-color: #87dfff;
+  font-size: 1em;
+  border-radius: 2vh;
+  line-height: 0.2;
+}
+
+.goalBalance {
+  min-width: 55%;
+  width: fit-content;
+  height: 100%;
+  position: relative;
+  margin: auto;
+  padding: auto;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #87dfff; /* Background color for the goalBalance div */
+  border-radius: 1em;
+  overflow: hidden; /* Hide the overflowing background color */
+}
+
+.outer {
+  height: 160px;
+  width: 160px;
+  padding: 5%;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+  -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  position: relative;
+  background-color: white;
+  margin: auto;
+}
+
+
+.inner {
+  height: 70%;
+  width: 70%;
+  box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+              inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+              -0.5px -0.5px 0px rgba(255, 255, 255, 1), 
+              0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+              0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+#number {
+  font-weight: 700;
+  color: #555;
+  font-size: 30px;
+}
+
+#range {
+  font-size: 15px;
+  color: #555;
+}
+
+circle {
+  fill: none;
+  stroke: url(#GradientColor);
+  stroke-width: 25px;
+  stroke-dasharray: 415;
+  stroke-dashoffset: 415;
+  animation: anim 2s linear forwards;
+}
+
+@keyframes anim {
+  100% {
+    stroke-dashoffset: var(--dash-offset);
+  }
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.transactions_header {
+  width: 100%;
+  height: auto;
+  padding: 0rem 1rem;
+  text-align: center;
+}
+
+.transactions_body {
+  width: 100%;
+  max-height: 80%; /* Adjust the height as needed */
+  background-color: #fff;
+  margin: 0.8rem auto;
+  border-radius: 0.6rem;
+  overflow: auto; /* Enable vertical scrolling */
+}
+
+
+.transactions_body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.transactions_body::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background-color: #0004;
+  visibility: hidden;
+}
+
+.transactions_body:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+table {
+  width: 100%;
+}
+
+td img {
+  width: 36px;
+  height: 36px;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+table,
+th,
+td {
+  padding: 0.5rem;
+  border-collapse: collapse;
+}
+
+main.table {
+  width: 100%;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(7px);
+  box-shadow: 0 0.4rem 0.8rem #0005;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+  max-height: 100%;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: #87dfff
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.043);
+
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.965);
+}
+
+
+.operation {
+  border-radius: 2rem;
+  text-align: center;
+}
+
+.operation.withdraw {
+  background-color: rgb(243, 153, 153);
+  color: rgb(200, 2, 2);
+}
+
+.operation.deposit {
+  background-color: lightgreen;
+  color: rgb(1, 66, 1);
+}
+
+.new-transaction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  background-color:#87dfff;
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+}
+
+.new-transaction label {
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.new-transaction input[type="text"],
+.new-transaction select {
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: large;
+}
+
+.new-transaction .button {
+  padding: 0.5rem 1rem;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: large;
+}
+
+.new-transaction .button:hover {
+  background-color: #45a049;
+}
+
+.graphBox {
+  display: flex;
+  width: 500px;
+  height: auto;
+  background-color:#87dfff;
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.05);
+}
+
+.graphBox canvas {
+  width: 100%;
+  height: 100%;
+}

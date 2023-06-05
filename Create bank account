@@ -1,0 +1,159 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account</title>
+    <link rel="stylesheet" href="../Bank/bank.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile">
+              <img src="../Bank/profilePictures/0.png" alt="Profile Picture">
+              <h3>John Doe</h3>
+            </div>
+            <div class="bank-name">
+              <h1>Bank Of The Century</h1>
+            </div>
+            <div class="logout">
+              <i class="fas fa-sign-out-alt"></i>
+            </div>
+          </header>
+          <div class="featuresContainer">
+            <div class="accountBalance">
+              <h5>Your current balance</h5>
+              <h1>15,000,00€</h1>
+            </div>
+            <div class="transactionHistory">
+              <section class="transactions_header">
+                <h1>Transactions</h1>
+              </section>
+              <section class="transactions_body">
+                <table>
+                  <thead>
+                      <tr>
+                          <th> Logo</th>
+                          <th> Counterparty </th>
+                          <th> Operation </th>
+                          <th> Date </th>
+                          <th> Amount </th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation withdraw">Withdraw</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation withdraw">Withdraw</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation deposit">Deposit</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation withdraw">Withdraw</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation withdraw">Withdraw</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation deposit">Deposit</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation withdraw">Withdraw</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation withdraw">Withdraw</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                    <tr>
+                      <td><img src="../Bank/companyLogos/spotify.png" alt=""></td>
+                      <td> Spotify </td>
+                      <td> <p class="operation deposit">Deposit</p></td>
+                      <td> 22.5.2023 </td>
+                      <td> <strong>9.99€ </strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <div class="new-transaction">
+              <label for="transaction-name">Transaction Name:</label>
+              <input type="text" id="transaction-name" placeholder="Enter transaction name">
+            
+              <label for="transaction-amount">Amount:</label>
+              <input type="text" id="transaction-amount" placeholder="Enter transaction amount">
+            
+              <label for="transaction-type">Type:</label>
+              <select id="transaction-type">
+                <option value="withdrawal">Withdrawal</option>
+                <option value="deposit">Deposit</option>
+              </select>
+              <button class="button">Submit</button>
+            </div>  
+          </div>
+          <div class="secondFeatures">
+              <div class="goalBalance">
+                <div class="outer">
+                  <div class="inner">
+                    <div id="number">
+                      65%
+                    </div>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="0 0 160 160">
+                    <defs>
+                      <linearGradient id="GradientColor">
+                        <stop offset="0%" stop-color="#DA22FF" />
+                        <stop offset="100%" stop-color="#9733EE" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="80" cy="80" r="67" stroke-linecap="round" />
+                  </svg>
+                </div>
+              </div>   
+              <!-- <div class="graphBox">
+                <canvas id="myChart"></canvas>
+              </div> -->
+          </div> 
+    </div>
+    <!-- <footer><h3><a href="https://www.freepik.com/free-vector/profile-icons-pack-hand-drawn-style_18156023.htm#query=profile%20icon&position=17&from_view=keyword&track=ais">Image by pikisuperstar</a> on Freepik</h3>
+    <h3><a href="https://www.freepik.com/free-vector/blue-fluid-background-frame_14547779.htm?query=blue and purple simple background">Image by rawpixel.com</a> on Freepik</h3></footer> -->
+
+    <script src="../Bank/bank.js" type="module" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../Bank/chart.js"></script>
+</body>
+</html>
+
