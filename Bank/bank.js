@@ -24,3 +24,22 @@ setInterval(() => {
 document.getElementById('accountBalance').textContent = loggedInAccount.balance + " €";
 
 document.getElementById('user-name').textContent = loggedInAccount.surname
+
+// Inserting new transactions in table
+const transactionTable = document.getElementById('transactionTable');
+const transactionDate = new Date().toJSON().slice(0,10).replace(/-/g,'.');
+let newTransactionRow = `
+  <tr>
+    <td><img src="../Bank/companyLogos/lidl.png" alt=""></td>
+    <td>Lidl</td>
+    <td><p class="operation withdraw">Withdraw</p></td>
+    <td>${transactionDate}</td>
+    <td><strong>9.99€</strong></td>
+  </tr>
+`;
+
+function addRow(newTransaction) {
+    transactionTable.innerHTML += newTransaction;
+}
+  
+addRow(newTransactionRow);
