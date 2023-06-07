@@ -5,18 +5,19 @@ class normalAccount{
         this.balance = balance;
         this.surname = surname;
     }
-    balanceUp(amount){
+    balanceUp(amount, company){
         this.balance += amount;
     }
-    balanceDown(amount){
+    balanceDown(amount, company){
         if(amount <= 0){
-            console.log('Cant withdraw 0$')
+            return 'Cant withdraw 0€'
         }
         else if(amount > this.balance){
-            console.log('Error Not Enough funds to procede')
+            return 'Error Not Enough funds to procede'
         }
         else {
             this.balance -= amount;
+            return company;
         }
     }
     getBalance(){

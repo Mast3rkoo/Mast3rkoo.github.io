@@ -322,16 +322,15 @@ tbody tr:hover {
 .new-transaction label {
   display: flex;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-size: 1.2em;
 }
 
-.new-transaction input[type="text"],
-.new-transaction select {
-  padding: 0.5rem;
-  border-radius: 0.4rem;
+.new-transaction input[type="text"]{
+  padding: 0.8rem;
+  border-radius: 0.8rem;
   border: 1px solid #ccc;
   outline: none;
-  font-size: large;
+  font-size: 1em;
 }
 
 .new-transaction .button {
