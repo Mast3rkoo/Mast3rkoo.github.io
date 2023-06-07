@@ -1,10 +1,10 @@
-import { Noga, Brenkusova, Nogova } from "../CreateBankAccount/createBank.js"
+import { normalAccount } from "../CreateBankAccount/createBank.js"
 
 // GETTING THE LOGGED ACCOUNT INFO
-const loggedInAccount = JSON.parse(localStorage.getItem('loggedInAccount'));
 const loggedInSavingAccount = JSON.parse(localStorage.getItem('loggedInSavingAccount'));
-
+const loggedInAccount = Object.assign(new normalAccount(), JSON.parse(localStorage.getItem('loggedInAccount')));
 // GOAL SAVING BALANCE CIRCLE
+
 const circle = document.querySelector('circle');
 const savingCircleNumber = document.getElementById("number");
 const savingCircleRange = document.getElementById('range')
@@ -53,6 +53,7 @@ const transactionSubmitButton = document.getElementById("transaction-button")
 
 transactionSubmitButton.onclick = () => {
   const transactionName = document.getElementById('transaction-name').innerText;
-  const transactionValue = document.getElementById('transaction-amount').innerText;
-  console.log(loggedInAccount)
+  const transactionValue = document.getElementById('transaction-amount').value;
+  loggedInAccount.balanceUp(transactionValue)
+  localStorage.setItem('loggedInAccount', JSON.stringify(loggedInAccount));
 }

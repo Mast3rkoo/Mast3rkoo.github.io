@@ -1,14 +1,14 @@
-class normalAccount{
+export class normalAccount{
     constructor(accountNumber, password, balance, surname){
         this.accountNumber = accountNumber;
         this.password = password;
         this.balance = balance;
         this.surname = surname;
     }
-    balanceUp(amount, company){
-        this.balance += amount;
+    balanceUp(amount){
+        this.balance += Number(amount);
     }
-    balanceDown(amount, company){
+    balanceDown(amount){
         if(amount <= 0){
             return 'Cant withdraw 0€'
         }
@@ -17,7 +17,6 @@ class normalAccount{
         }
         else {
             this.balance -= amount;
-            return company;
         }
     }
     getBalance(){
