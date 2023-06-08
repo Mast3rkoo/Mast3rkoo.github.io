@@ -44,16 +44,62 @@ let newTransactionRow = `
 function addRow(newTransaction) {
     transactionTable.innerHTML += newTransaction;
 }
-  
-addRow(newTransactionRow);
 
 // NEW TRANSACTION OPERATIONS 
+function populateTable() {
+  const storedTransactions = JSON.parse(localStorage.getItem('transactions'));
+  if (storedTransactions) {
+    storedTransactions.forEach((transaction) => {
+      addRow(transaction);
+    });
+  }
+}
 
-const transactionSubmitButton = document.getElementById("transaction-button")
+// Call the populateTable function to populate the table when the page loads
+window.addEventListener('load', populateTable);
+
+// NEW TRANSACTION OPERATIONS
+const transactionSubmitButton = document.getElementById('transaction-button');
 
 transactionSubmitButton.onclick = () => {
-  const transactionName = document.getElementById('transaction-name').innerText;
+  const transactionName = document.getElementById('transaction-name').value;
   const transactionValue = document.getElementById('transaction-amount').value;
-  loggedInAccount.balanceUp(transactionValue)
+  let icon;
+  switch(transactionName.toLowerCase()) {
+    case 'spotify':
+      icon = transactionName;
+      break;
+    case 'lidl':
+      icon = transactionName;
+      break;
+    case 'apple':
+      icon = transactionName;
+      break;
+    case 'mcdonald':
+        icon = transactionName;
+        break;
+    case 'coop':
+          icon = transactionName;
+          break;
+    default:
+      icon = 'profile';
+  }
+  loggedInAccount.balanceDown(transactionValue);
+  const newTransaction = `<tr>
+    <td><img src="../Bank/companyLogos/${icon}.png" alt=""></td>
+    <td>${transactionName}</td>
+    <td><p class="operation withdraw">Withdraw</p></td>
+    <td>${transactionDate}</td>
+    <td><strong>${transactionValue}€</strong></td>
+  </tr>`;
+  addRow(newTransaction);
+
+  // Save the new transaction to local storage
+  const storedTransactions = JSON.parse(localStorage.getItem('transactions')) || [];
+  storedTransactions.push(newTransaction);
+  localStorage.setItem('transactions', JSON.stringify(storedTransactions));
+
+  // Update the logged-in account in local storage
   localStorage.setItem('loggedInAccount', JSON.stringify(loggedInAccount));
-}
+};
+
