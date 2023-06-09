@@ -23,23 +23,20 @@ setInterval(() => {
     }
 }, 25);
 
-// USER NAME AND USER BALANCE SHOWER
-document.getElementById('accountBalance').textContent = loggedInAccount.balance + " €";
+// LOGGING OUT SYSTEM
+const logoutButton = document.getElementById('logout');
+logoutButton.onclick = () => {
+  window.location.href = '../index.html'
+}
+
+// USER NAME AND USER ALANCE SHOWER
+document.getElementById('accountBalance').textContent = loggedInAccount.balance.toFixed(2) + " €";
 
 document.getElementById('user-name').textContent = loggedInAccount.surname
 
 // Inserting new transactions in table
 const transactionTable = document.getElementById('transactionTable');
 const transactionDate = new Date().toJSON().slice(0,10).replace(/-/g,'.');
-let newTransactionRow = `
-  <tr>
-    <td><img src="../Bank/companyLogos/lidl.png" alt=""></td>
-    <td>Lidl</td>
-    <td><p class="operation withdraw">Withdraw</p></td>
-    <td>${transactionDate}</td>
-    <td><strong>9.99€</strong></td>
-  </tr>
-`;
 
 function addRow(newTransaction) {
     transactionTable.innerHTML += newTransaction;
@@ -60,6 +57,7 @@ window.addEventListener('load', populateTable);
 
 // NEW TRANSACTION OPERATIONS
 const transactionSubmitButton = document.getElementById('transaction-button');
+let chartWithdrawValues = JSON.parse(localStorage.getItem('chartWithdrawValues')) || [0];
 
 transactionSubmitButton.onclick = () => {
   const transactionName = document.getElementById('transaction-name').value;
@@ -101,5 +99,9 @@ transactionSubmitButton.onclick = () => {
 
   // Update the logged-in account in local storage
   localStorage.setItem('loggedInAccount', JSON.stringify(loggedInAccount));
+  chartWithdrawValues[0] += Number(transactionValue);
+  // Save the chatWithdrawValues 
+  localStorage.setItem('chartWithdrawValues', JSON.stringify(chartWithdrawValues)) || [0];
 };
+
 

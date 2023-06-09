@@ -1,16 +1,18 @@
- const ctx = document.getElementById('myChart');
+let chartWithdrawValues = JSON.parse(localStorage.getItem('chartWithdrawValues'));
+const ctx = document.getElementById('myChart');
 
+console.log(chartWithdrawValues)
 new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ["January","February", "March", "April", "May", "June","July", "August","September", "October","November", "December"],
+      labels: ['ALL TIME TRANSACTIONS'],
       datasets: [{
         label: 'Deposits',
-        data: [100, 200, 300, 500, 1000],
+        data: [0],
         borderWidth: 2
       }, {
         label: 'Withdrawals',
-        data: [50, 75, 100, 200, 50],
+        data: chartWithdrawValues,
         borderWidth: 2
       }]
     },
